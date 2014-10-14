@@ -1,0 +1,9 @@
+What is an ER model (Entity-Relationship)
+
+1) A graphical representation of entities and their relationships to each other, typically used in computing in regard to the organization of data within databases or information systems. An entity is a piece of data-an object or concept about which data is stored.
+
+2) (One to One) One instance of an entity is associated with one other instance of another entity. For example, in a database of employees, each employee name is associated with only one social security number (B).
+
+3) (One to Many) One instance of an entity is associated with zero, one or many instances of another entity, but for one instance of entity there is only one instance of entity. For example, for a company with all employees working in one building, the building name is associated with many different employees, but those employees all share the same singular association with entity.
+
+4) (Many to Many) One instance of an entity is associated with one, zero or many instances of another entity, and one instance of entity is associated with one, zero or many instances of entity. For example, for a company in which all of its employees work on multiple projects, each instance of an employee is associated with many instances of a project, and at the same time, each instance of a project has multiple employees associated with it.
