@@ -1,0 +1,16 @@
+How can we get provider for a lab_account?
+
+The 3 Tables (LAB_ACCOUNT_LOCATION, LOCATION_PROVIDER, PROVIDER) must be joined 
+for this output to work. 
+
+
+SELECT 
+    LAB_ACCOUNT_LOCATION.LAB_ACCT_KEY, p . *
+FROM
+    LAB_ACCOUNT_LOCATION 
+        INNER JOIN
+    LOCATION_PROVIDER lp ON lp.loc_key = LAB_ACCOUNT_LOCATION.LOC_KEY 
+        INNER JOIN
+    PROVIDER p ON p.prov_key = lp.prov_key 
+WHERE
+    LAB_ACCT_KEY = 20;
