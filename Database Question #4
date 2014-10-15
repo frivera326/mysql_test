@@ -1,0 +1,3 @@
+1) Can a database have a table that cannot join to any other one, i.e. any INNER JOIN with the table always results in empty set? Explain why you think so.
+
+Answer= Yes, there acn be statistical tables that do not link to other tables usuallu called stored procedures.  
