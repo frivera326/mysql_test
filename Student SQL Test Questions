@@ -1,0 +1,46 @@
+*** Table Created merging all 3 tables into one ***
+
+CREATE TABLE student_training
+SELECT
+  student.id,
+  student.first_name,
+  student.last_name,
+  class.class_name,
+  registration.class_id
+FROM student
+  LEFT JOIN registration
+    ON student.id = registration.student_id
+  LEFT JOIN class
+    ON registration.class_id = class.id
+  ORDER BY student.id
+
+
+1) "All Students not taking Physics"
+
+SELECT *
+FROM student_training
+WHERE id NOT IN (SELECT id FROM student_training WHERE class_id = 3);
+
+Answer Output= Jim Watson, Bob Johnson, Mike Jackson, Gwen Stephanie, Will Pharel, Blake Shelton
+
+
+2) Find who takes the most classes
+
+select concat(first_name, ' ', last_name), count(class_id)
+from student s
+left join registration r on s.id = r.student_id
+group by concat(first_name, ' ', last_name)
+order by count(class_id) desc
+
+Answer Output= Mary Hopkin(3) Karl Marx(2)
+
+
+3) "Find Out Which Students does not take any classes"
+
+SELECT *
+FROM student_training_1
+WHERE class_id IS NULL;
+
+Answer Output= Will Pharel, Blake Shelton
+
+
